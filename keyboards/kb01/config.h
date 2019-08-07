@@ -37,12 +37,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     { E6, F0, F1, F4, F5, F6, NO_PIN}, \
     { F7, C7, C6, B6, B5, B4, NO_PIN}, \
     { B7, D1, D2, D3, D4, NO_PIN, NO_PIN}, \
-    {NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, D7, D6}, \
+    {NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, D7, D6} \
+}
+
+#define DIRECT_PINS_RIGHT { \
+    {NO_PIN, F6, F5, F4, F1, F0, E6}, \
+    {NO_PIN, B4, B5, B6, C6, C7, F7}, \
+    {NO_PIN, NO_PIN, D4, D3, D2, D1, B7}, \
+    {D6, D7, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN} \
 }
 
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
  */
+#define NO_USB_STARTUP_CHECK
+#define SPLIT_USB_DETECT
 #define SOFT_SERIAL_PIN D0 // or D1, D2, D3, E6
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
@@ -73,7 +82,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * For a less heavy-handed approach, enable NKRO via magic key (LShift+RShift+N)
  * or via bootmagic (hold SPACE+N while plugging in the keyboard). Once set by
  * bootmagic, NKRO mode will always be enabled until it is toggled again during a
- * power-up. 
+ * power-up.
  *
  */
 //#define FORCE_NKRO
