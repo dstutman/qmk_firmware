@@ -30,20 +30,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DESCRIPTION     A custom split
 
 /* key matrix size */
-#define MATRIX_ROWS 4
+#define MATRIX_ROWS 8
 #define MATRIX_COLS 7
 
 #define DIRECT_PINS { \
-    { PE6, PF0, PF1, PF4, PF5, PF6, NO_PIN}, \
-    { PF7, PC7, PC6, PB6, PB5, PB4, NO_PIN}, \
-    { PB7, PD1, PD2, PD3, PD4, NO_PIN, NO_PIN}, \
-    {NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, PD7, PD6}, \
+    { E6, F0, F1, F4, F5, F6, NO_PIN}, \
+    { F7, C7, C6, B6, B5, B4, NO_PIN}, \
+    { B7, D1, D2, D3, D4, NO_PIN, NO_PIN}, \
+    {NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, D7, D6}, \
 }
 
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
  */
-//#define SOFT_SERIAL_PIN D0 // or D1, D2, D3, E6
+#define SOFT_SERIAL_PIN D0 // or D1, D2, D3, E6
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
@@ -73,7 +73,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * For a less heavy-handed approach, enable NKRO via magic key (LShift+RShift+N)
  * or via bootmagic (hold SPACE+N while plugging in the keyboard). Once set by
  * bootmagic, NKRO mode will always be enabled until it is toggled again during a
- * power-up.
+ * power-up. 
  *
  */
 //#define FORCE_NKRO
@@ -131,24 +131,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define MAGIC_KEY_NKRO           N
 //#define MAGIC_KEY_SLEEP_LED      Z
 
-/*
- * Feature disable options
- *  These options are also useful to firmware size reduction.
- */
-
-/* disable debug print */
-//#define NO_DEBUG
-
-/* disable print */
-//#define NO_PRINT
-
-/* disable action features */
-//#define NO_ACTION_LAYER
-//#define NO_ACTION_TAPPING
-//#define NO_ACTION_ONESHOT
-//#define NO_ACTION_MACRO
-//#define NO_ACTION_FUNCTION
-
-/* Bootmagic Lite key configuration */
-// #define BOOTMAGIC_LITE_ROW 0
-// #define BOOTMAGIC_LITE_COLUMN 0
+#define BOOTMAGIC_LITE_ROW 1
+#define BOOTMAGIC_LITE_COLUMN 5
